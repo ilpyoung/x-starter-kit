@@ -13,7 +13,7 @@ export function typeOrmOption(synchronize = false): TypeOrmModuleAsyncOptions {
             username: configService.get("DB_USER"),
             password: configService.get("DB_PASS"),
             database: configService.get("DB_DB"),
-            entities: [join(__dirname, "dist/**/*.entity.{js,ts}")],
+            entities: [join(__dirname, "../**/*.entity.{js,ts}")],
             synchronize,
             legacySpatialSupport: false,
         }),
