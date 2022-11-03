@@ -12,11 +12,13 @@ import { LoggerModule } from "./logger/logger.module";
 import { RedisModule } from "./redis/redis.module";
 import { APP_FILTER } from "@nestjs/core";
 import { PathMiddleWare } from "./common/middleware/pathlog.middleware";
+import { HttpRequestModule } from "./http-request/http-request.module";
 
 @Module({
     imports: [
         AuthModule,
         LoggerModule,
+        HttpRequestModule,
         ConfigModule.forRoot(configOption),
         TypeOrmModule.forRootAsync(typeOrmOption()),
         RedisModule.forRootAsync(redisOption()),
