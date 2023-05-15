@@ -7,5 +7,6 @@ import { HttpModule, HttpService } from "@nestjs/axios";
     imports: [HttpModule],
     controllers: [HttpRequestController],
     providers: [HttpRequestService],
+    exports: [HttpRequestService],
 })
 export class HttpRequestModule {}
