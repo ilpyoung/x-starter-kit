@@ -1,13 +1,11 @@
 import { MiddlewareConsumer, Module } from "@nestjs/common";
 import { ConfigModule } from "@nestjs/config";
-import { TypeOrmModule } from "@nestjs/typeorm";
 import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
 import { AuthModule } from "./auth/auth.module";
 import { HttpExceptionFilter } from "./common/filter/exception.filter";
 import { configOption } from "./config/config.option";
 import { redisOption } from "./config/redis.option";
-import { typeOrmOption } from "./config/typeorm.option";
 import { LoggerModule } from "./logger/logger.module";
 import { RedisModule } from "./redis/redis.module";
 import { APP_FILTER } from "@nestjs/core";
@@ -20,7 +18,6 @@ import { HttpRequestModule } from "./http-request/http-request.module";
         LoggerModule,
         HttpRequestModule,
         ConfigModule.forRoot(configOption),
-        TypeOrmModule.forRootAsync(typeOrmOption()),
         RedisModule.forRootAsync(redisOption()),
     ],
     controllers: [AppController],

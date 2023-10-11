@@ -1,0 +1,19 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+//model test1 {
+//  u_id               String                  @id @db.VarChar(100)
+//  u_name             String?                 @db.VarChar(200)
+//  @@map("test_dev")
+//}
+
+//enum user_table_dev_u_delete {
+//  Y
+//  N
+//}
